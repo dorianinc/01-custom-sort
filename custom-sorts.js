@@ -42,11 +42,39 @@ function validAnagrams(s, t) {
 }
 
 function reverseBaseSort(arr) {
-  return arr.sort(function (a, b) { return (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b)})
+  return arr.sort(function (a, b) { return (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b) })
 }
 
 function frequencySort(arr) {
-  // Your code here
+  // ascending based off quantity and descending if quantity is the same
+  let obj = {}
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i]
+    if (obj[num] === undefined) {
+      obj[num] = 1
+    } else {
+      obj[num] += 1
+    }
+  }
+  //1 b before a
+  //0 nothing
+  //-1 a comes before b
+  console.log(obj)
+  return arr.sort((a, b) => {
+    if (obj[a] === obj[b]) {
+      return b - a
+    } else if (obj[a] > obj[b]) {
+      return 1
+    } else return -1
+  })
+  // console.log('object', obj)
+  // let keys = Object.entries(obj)
+  // console.log('unsorted', keys)
+  // let sorted = keys.sort(function (a, b) { return a[1] - b[1] });
+  // console.log('sorted', sorted)
+
+  // return sorted.sort(function (a, b) { return (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b) })
+
 }
 
 module.exports = [
