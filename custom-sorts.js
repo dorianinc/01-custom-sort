@@ -1,5 +1,7 @@
 function ageSort(users) {
   // Your code here
+  
+  return users.sort(function (a, b) { return a.age - b.age });
 }
 
 function oddEvenSort(arr) {
