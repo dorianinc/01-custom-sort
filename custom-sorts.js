@@ -1,8 +1,8 @@
-function ageSort(users) {
-  // Your code here
 
-  return users.sort(function (a, b) { return a.age - b.age });
-}
+const ageSort = users => users.sort((a, b) => a.age - b.age);
+// function ageSort(users) {
+//   return users.sort((a, b) => a.age - b.age );
+// }
 
 function oddEvenSort(arr) {
   // Your code here
@@ -13,18 +13,13 @@ function oddEvenSort(arr) {
     if (num % 2 === 0) even.push(num);
     else odd.push(num);
   }
-  let evenSorted = even.sort(function (a, b) { return a - b })
-  let oddSorted = odd.sort(function (a, b) { return a - b })
+  let evenSorted = even.sort((a, b) =>  a - b )
+  let oddSorted = odd.sort((a, b) => a - b )
   return [...oddSorted, ...evenSorted]
 }
 
 function validAnagrams(s, t) {
-  /*
-  1. set two arrays
-  2. itterate through strings and push each letter array
-  3. sort both arrays
-  4 compare sorted arrays - if equal return true, if not return false
-  */
+
   if (s.length !== t.length) return false;
   let sArray = []
   let tArray = []
@@ -40,10 +35,10 @@ function validAnagrams(s, t) {
   else return false;
 
 }
-
-function reverseBaseSort(arr) {
-  return arr.sort(function (a, b) { return (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b) })
-}
+const reverseBaseSort = (arr) => arr.sort((a, b) => (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b))
+// function reverseBaseSort(arr) {
+//   return arr.sort((a, b) => { return (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b) })
+// }
 
 function frequencySort(arr) {
   // ascending based off quantity and descending if quantity is the same
