@@ -20,7 +20,7 @@ function oddEvenSort(arr) {
 
 function validAnagrams(s, t) {
   /*
-  1. set two arrays 
+  1. set two arrays
   2. itterate through strings and push each letter array
   3. sort both arrays
   4 compare sorted arrays - if equal return true, if not return false
@@ -42,7 +42,7 @@ function validAnagrams(s, t) {
 }
 
 function reverseBaseSort(arr) {
-  // Your code here
+  return arr.sort(function (a, b) { return (Math.floor(Math.log10(b)) - Math.floor(Math.log10(a))) || (a - b)})
 }
 
 function frequencySort(arr) {
